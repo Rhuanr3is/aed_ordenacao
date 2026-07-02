@@ -1,0 +1,23 @@
+Uso de Inteligencia Artificial:
+
+Ferramentas Utilizadas:
+
+- ChatGPT / GPT-5;
+
+Como Utilizamos:
+
+Prompt: "pq algoritos avancados sao melhores?"
+Resposta: "Algoritmos avançados são melhores para grandes volumes de dados porque realizam menos operações para ordenar os elementos. Em vez de comparar praticamente todos os elementos entre si (como faz o Bubble Sort), eles utilizam estratégias mais inteligentes para dividir e organizar os dados."
+
+Prompt: "explique oq é o gcov e o gprov"
+Resposta: "GCOV: responde à pergunta "Meu código foi testado?", mostrando quais linhas e trechos foram executados.
+GPROF: responde à pergunta "Onde meu programa está gastando tempo?", identificando as funções que mais consomem recursos de processamento."
+
+Double check:
+
+- Compilamos e rodamos o código gerado;
+- Todos conseguem explicar os algoritmos;
+- Nenhum bloco foi enviado sem revisão;
+
+Reflexão Final:
+AA inteligência artificial contribuiu para otimizar a implementação e a compreensão dos algoritmos de ordenação. Contudo, foi necessária a validação dos trechos gerados para corrigir erros de compilação e inconsistências. Assim, evidenciou-se que a IA deve ser utilizada como ferramenta de apoio ao desenvolvimento, complementando, e não substituindo, a compreensão do código pelo programador.
