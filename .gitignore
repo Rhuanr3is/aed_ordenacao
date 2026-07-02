@@ -1,0 +1,21 @@
+# Executáveis
+*.exe
+
+# Objetos
+*.o
+
+# Cobertura
+*.gcda
+*.gcno
+*.gcov
+
+# Profiling
+gmon.out
+profile.txt
+
+# VS Code
+.vscode/
+
+# Sistema
+.DS_Store
+Thumbs.db
