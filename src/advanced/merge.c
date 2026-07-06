@@ -4,7 +4,8 @@ void merge(int vetor[], int inicio, int meio, int fim) {
     int n1 = meio - inicio + 1;
     int n2 = fim - meio;
 
-    int esquerda[n1], direita[n2];
+    int esquerda[n1];
+    int direita[n2];
 
     for (int i = 0; i < n1; i++)
         esquerda[i] = vetor[inicio + i];
@@ -39,4 +40,12 @@ void merge(int vetor[], int inicio, int meio, int fim) {
 }
 
 void mergeSort(int vetor[], int inicio, int fim) {
-    if (inicio <
+    if (inicio < fim) {
+        int meio = inicio + (fim - inicio) / 2;
+
+        mergeSort(vetor, inicio, meio);
+        mergeSort(vetor, meio + 1, fim);
+
+        merge(vetor, inicio, meio, fim);
+    }
+}

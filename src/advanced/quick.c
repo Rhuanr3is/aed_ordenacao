@@ -29,22 +29,3 @@ void quickSort(int vetor[], int baixo, int alto) {
         quickSort(vetor, p + 1, alto);
     }
 }
-
-int main() {
-    int vetor[] = {12, 11, 13, 5, 6, 7};
-    int n = sizeof(vetor) / sizeof(vetor[0]);
-
-    printf("Vetor original:\n");
-    for (int i = 0; i < n; i++)
-        printf("%d ", vetor[i]);
-
-    quickSort(vetor, 0, n - 1);
-
-    printf("\n\nVetor ordenado:\n");
-    for (int i = 0; i < n; i++)
-        printf("%d ", vetor[i]);
-
-    printf("\n");
-
-    return 0;
-}

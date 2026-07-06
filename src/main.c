@@ -3,22 +3,20 @@
 void bubbleSort(int v[], int n);
 void selection(int v[], int n);
 void insertion(int v[], int n);
-void mergeSort(int v[], int n);
-void quickSort(int v[], int n);
+void mergeSort(int v[], int ini, int fim);
+void quickSort(int v[], int low, int high);
 void heapSort(int v[], int n);
 
 void imprimir(int v[], int n){
-
     for(int i = 0; i < n; i++){
         printf("%d ", v[i]);
     }
-
     printf("\n");
 }
 
 int main(){
 
-    int vetor[] = {5,3,1,4,2};
+    int vetor[] = {5, 3, 1, 4, 2};
     int n = 5;
     int opcao;
 
@@ -31,32 +29,32 @@ int main(){
     printf("6 - Heap Sort\n");
 
     printf("Escolha: ");
-    scanf("%d",&opcao);
+    scanf("%d", &opcao);
 
     switch(opcao){
 
         case 1:
-            bubbleSort(vetor,n);
+            bubbleSort(vetor, n);
             break;
 
         case 2:
-            selection(vetor,n);
+            selection(vetor, n);
             break;
 
         case 3:
-            insertion(vetor,n);
+            insertion(vetor, n);
             break;
 
         case 4:
-            mergeSort(vetor,n);
+            mergeSort(vetor, 0, n - 1);
             break;
 
         case 5:
-            quickSort(vetor,n);
+            quickSort(vetor, 0, n - 1);
             break;
 
         case 6:
-            heapSort(vetor,n);
+            heapSort(vetor, n);
             break;
 
         default:
@@ -65,7 +63,7 @@ int main(){
     }
 
     printf("Vetor ordenado:\n");
-    imprimir(vetor,n);
+    imprimir(vetor, n);
 
     return 0;
 }

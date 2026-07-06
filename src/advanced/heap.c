@@ -1,5 +1,3 @@
-#include <stdio.h>
-
 void trocar(int *a, int *b) {
     int temp = *a;
     *a = *b;
@@ -31,23 +29,4 @@ void heapSort(int vetor[], int n) {
         trocar(&vetor[0], &vetor[i]);
         heapify(vetor, i, 0);
     }
-}
-
-int main() {
-    int vetor[] = {12, 11, 13, 5, 6, 7};
-    int n = sizeof(vetor) / sizeof(vetor[0]);
-
-    printf("Vetor original:\n");
-    for (int i = 0; i < n; i++)
-        printf("%d ", vetor[i]);
-
-    heapSort(vetor, n);
-
-    printf("\n\nVetor ordenado:\n");
-    for (int i = 0; i < n; i++)
-        printf("%d ", vetor[i]);
-
-    printf("\n");
-
-    return 0;
 }
