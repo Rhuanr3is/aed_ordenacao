@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void trocar(int *a, int *b) {
+void swap(int *a, int *b) {
     int temp = *a;
     *a = *b;
     *b = temp;
@@ -13,11 +13,11 @@ int particionar(int vetor[], int baixo, int alto) {
     for (int j = baixo; j < alto; j++) {
         if (vetor[j] <= pivo) {
             i++;
-            trocar(&vetor[i], &vetor[j]);
+            swap(&vetor[i], &vetor[j]);
         }
     }
 
-    trocar(&vetor[i + 1], &vetor[alto]);
+    swap(&vetor[i + 1], &vetor[alto]);
     return i + 1;
 }
 

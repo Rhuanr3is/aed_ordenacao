@@ -6,9 +6,9 @@ void selection(int v[], int n);
 
 void insertion(int v[], int n);
 
-void mergeSort(int v[], int n);
+void mergeSort(int v[], int ini, int fim);
 
-void quickSort(int v[], int n);
+void quickSort(int v[], int low, int high);
 
 void heapSort(int v[], int n);
 
@@ -50,16 +50,16 @@ void testarInsertion(){
 
 void testarMerge(){
     int v[] = {10,7,4,8,2};
-    mergeSort(v,5);
+    mergeSort(v, 0, 4);
     if(verificarOrdenado(v,5))
         printf("Merge executado com exito\n");
     else
         printf("Merge com falha\n");
 }
- 
+
 void testarQuick(){
     int v[] = {6,1,9,3,2};
-    quickSort(v,5);
+    quickSort(v, 0, 4);
     if(verificarOrdenado(v,5))
         printf("Quick executado com exito\n");
     else
