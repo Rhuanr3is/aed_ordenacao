@@ -17,9 +17,18 @@ test:
 	$(CC) $(CFLAGS) tests/test_basic.c $(BASICS) $(ADVANCED) -o teste.exe
 
 coverage:
-	$(CC) $(CFLAGS) --coverage tests/test_basic.c $(BASICS) $(ADVANCED) -o teste.exe
-	./teste.exe
-	gcov tests/test_basic.c
+	rm -rf *.gcda *.gcno *.gcov coverage.info out teste
+
+	gcc --coverage \
+	tests/test_basic.c \
+	src/basics/*.c \
+	src/advanced/*.c \
+	-o teste
+
+	./teste
+
+	lcov --capture --directory . --output-file coverage.info
+	genhtml coverage.info --output-directory out
 
 profile:
 	$(CC) $(CFLAGS) -pg tests/test_basic.c $(BASICS) $(ADVANCED) -o teste.exe
