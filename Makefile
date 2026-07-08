@@ -26,10 +26,8 @@ coverage:
 	# Executa o teste para gerar os dados (.gcda)
 	./teste
 
-	# Roda o gcov apontando para os subdiretórios corretos onde os dados foram gerados
-	gcov -o . tests/test_basic.c
-	gcov -o src/basics/ src/basics/*.c
-	gcov -o src/advanced/ src/advanced/*.c
+	# Roda o gcov passando os arquivos fontes. Ele vai encontrar os arquivos teste-*.gcda na raiz automaticamente!
+	gcov tests/test_basic.c $(BASICS) $(ADVANCED)
 
 profile:
 	$(CC) $(CFLAGS) -pg tests/test_basic.c $(BASICS) $(ADVANCED) -o teste.exe
