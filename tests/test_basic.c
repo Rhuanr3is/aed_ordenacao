@@ -27,8 +27,8 @@ void gerarFibonacciInvertido(int v[], int n) {
 }
 
 void testarBubble(){
-    int n = 40;
-    int v[40];
+    int n = 30000 ;
+    int v[30000];
     gerarFibonacciInvertido(v, n);
     bubbleSort(v, n);
     if(verificarOrdenado(v, n))
@@ -38,8 +38,8 @@ void testarBubble(){
 }
 
 void testarSelection(){
-    int n = 40;
-    int v[40];
+    int n = 30000 ;
+    int v[30000];
     gerarFibonacciInvertido(v, n);
     selection(v, n);
     if(verificarOrdenado(v, n))
@@ -49,8 +49,8 @@ void testarSelection(){
 }
 
 void testarInsertion(){
-    int n = 40;
-    int v[40];
+    int n = 30000 ;
+    int v[30000];
     gerarFibonacciInvertido(v, n);
     insertion(v, n);
     if(verificarOrdenado(v, n))
@@ -60,8 +60,8 @@ void testarInsertion(){
 }
 
 void testarMerge(){
-    int n = 40;
-    int v[40];
+    int n = 30000 ;
+    int v[30000];
     gerarFibonacciInvertido(v, n);
     mergeSort(v, 0, n - 1);
     if(verificarOrdenado(v, n))
@@ -71,8 +71,8 @@ void testarMerge(){
 }
 
 void testarQuick(){
-    int n = 40;
-    int v[40];
+    int n = 30000 ;
+    int v[30000];
     gerarFibonacciInvertido(v, n);
     quickSort(v, 0, n - 1);
     if(verificarOrdenado(v, n))
@@ -82,8 +82,8 @@ void testarQuick(){
 }
 
 void testarHeap(){
-    int n = 40;
-    int v[40];
+    int n = 30000 ;
+    int v[30000];
     gerarFibonacciInvertido(v, n);
     heapSort(v, n);
     if(verificarOrdenado(v, n))
