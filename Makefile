@@ -17,18 +17,17 @@ test:
 	$(CC) $(CFLAGS) tests/test_basic.c $(BASICS) $(ADVANCED) -o teste.exe
 
 coverage:
-	rm -rf *.gcda *.gcno *.gcov coverage.info out teste
+	# Limpa arquivos de execuções anteriores
+	rm -rf *.gcda *.gcno *.gcov src/basics/*.gcda src/basics/*.gcno src/advanced/*.gcda src/advanced/*.gcno teste
 
-	gcc --coverage \
-	tests/test_basic.c \
-	src/basics/*.c \
-	src/advanced/*.c \
-	-o teste
+	# Compila com as flags de cobertura
+	gcc --coverage tests/test_basic.c $(BASICS) $(ADVANCED) -o teste
 
+	# Executa o teste para gerar os dados (.gcda)
 	./teste
 
-	lcov --capture --directory . --output-file coverage.info
-	genhtml coverage.info --output-directory out
+	# Roda o gcov nos arquivos de código-fonte para gerar os relatórios .gcov
+	gcov tests/test_basic.c $(BASICS) $(ADVANCED)
 
 profile:
 	$(CC) $(CFLAGS) -pg tests/test_basic.c $(BASICS) $(ADVANCED) -o teste.exe
@@ -36,4 +35,5 @@ profile:
 	gprof teste.exe gmon.out > profile.txt
 
 clean:
-	rm -f *.exe *.gcda *.gcno *.gcov gmon.out profile.txt
+	rm -f *.exe *.gcda *.gcno *.gcov gmon.out profile.txt teste
+	rm -f src/basics/*.gcda src/basics/*.gcno src/advanced/*.gcda src/advanced/*.gcno
